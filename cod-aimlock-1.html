@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>COD AIMLOCK BY TOP H4X</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #050505;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 25px 12px;
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 30px;
+    color: #00ff88;
+    text-shadow: 0 0 15px #00ff88;
+}
+
+.header p {
+    color: #aaa;
+    margin-top: 8px;
+}
+
+.card {
+    background: #101010;
+    border: 1px solid #222;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 0 20px rgba(0,255,136,.08);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: #181818;
+    color: white;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+input:focus,
+select:focus {
+    border-color: #00ff88;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #00ff88;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+.result {
+    display: none;
+}
+
+.result h2 {
+    color: #00ff88;
+    text-align: center;
+}
+
+.device-name {
+    text-align: center;
+    color: #ddd;
+    margin-bottom: 18px;
+}
+
+.mode-title {
+    color: #00ff88;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.sensi-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 0;
+    border-bottom: 1px solid #252525;
+}
+
+.sensi-row:last-child {
+    border-bottom: none;
+}
+
+.value {
+    color: #00ff88;
+    font-weight: bold;
+}
+
+.note {
+    color: #888;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>COD AIMLOCK BY TOP H4X</h1>
+        <p>Precision sensitivity generator</p>
+    </div>
+
+    <div class="card">
+
+        <label for="device">Enter your phone model</label>
+
+        <input
+            id="device"
+            type="text"
+            list="devices"
+            placeholder="Example: Redmi Note 13 Pro"
+            autocomplete="off"
+        >
+
+        <datalist id="devices">
+
+            <!-- Samsung -->
+            <option value="Samsung Galaxy S24 Ultra">
+            <option value="Samsung Galaxy S23 Ultra">
+            <option value="Samsung Galaxy S22 Ultra">
+            <option value="Samsung Galaxy S21 Ultra">
+            <option value="Samsung Galaxy S20 FE">
+            <option value="Samsung Galaxy A55">
+            <option value="Samsung Galaxy A54">
+            <option value="Samsung Galaxy A35">
+            <option value="Samsung Galaxy A25">
+            <option value="Samsung Galaxy A15">
+
+            <!-- Apple -->
+            <option value="iPhone 16 Pro Max">
+            <option value="iPhone 16 Pro">
+            <option value="iPhone 15 Pro Max">
+            <option value="iPhone 15 Pro">
+            <option value="iPhone 14 Pro Max">
+            <option value="iPhone 13 Pro Max">
+            <option value="iPhone 12 Pro Max">
+            <option value="iPhone 11">
+
+            <!-- Xiaomi / Redmi / POCO -->
+            <option value="Xiaomi 14 Ultra">
+            <option value="Xiaomi 13 Pro">
+            <option value="Redmi Note 13 Pro+">
+            <option value="Redmi Note 13 Pro">
+            <option value="Redmi Note 12 Pro">
+            <option value="Redmi Note 11">
+            <option value="Redmi 13C">
+            <option value="Redmi 12">
+            <option value="POCO F6 Pro">
+            <option value="POCO X6 Pro">
+            <option value="POCO X5 Pro">
+
+            <!-- Tecno -->
+            <option value="Tecno Camon 30 Pro">
+            <option value="Tecno Camon 30">
+            <option value="Tecno Camon 20 Pro">
+            <option value="Tecno Phantom V Fold">
+            <option value="Tecno Pova 6 Pro">
+            <option value="Tecno Pova 5 Pro">
+            <option value="Tecno Spark 20 Pro">
+            <option value="Tecno Spark 10 Pro">
+
+            <!-- Infinix -->
+            <option value="Infinix GT 20 Pro">
+            <option value="Infinix GT 10 Pro">
+            <option value="Infinix Note 40 Pro">
+            <option value="Infinix Note 30 Pro">
+            <option value="Infinix Hot 40 Pro">
+            <option value="Infinix Hot 30">
+            <option value="Infinix Smart 8">
+
+            <!-- itel -->
+            <option value="itel A70">
+            <option value="itel A60">
+            <option value="itel S23">
+            <option value="itel P55">
+            <option value="itel A100C">
+
+            <!-- OPPO -->
+            <option value="OPPO Find X7 Ultra">
+            <option value="OPPO Reno 11 Pro">
+            <option value="OPPO Reno 10 Pro">
+            <option value="OPPO A98">
+            <option value="OPPO A78">
+
+            <!-- vivo -->
+            <option value="vivo X100 Pro">
+            <option value="vivo V30 Pro">
+            <option value="vivo V29">
+            <option value="vivo Y100">
+            <option value="vivo Y28">
+
+            <!-- OnePlus -->
+            <option value="OnePlus 12">
+            <option value="OnePlus 11">
+            <option value="OnePlus Nord 4">
+            <option value="OnePlus Nord 3">
+
+            <!-- Realme -->
+            <option value="Realme GT 6">
+            <option value="Realme GT 5">
+            <option value="Realme 12 Pro+">
+            <option value="Realme C67">
+
+            <!-- Google -->
+            <option value="Google Pixel 9 Pro">
+            <option value="Google Pixel 8 Pro">
+            <option value="Google Pixel 7 Pro">
+
+            <!-- Gaming phones -->
+            <option value="ASUS ROG Phone 8">
+            <option value="ASUS ROG Phone 7">
+            <option value="RedMagic 9 Pro">
+            <option value="RedMagic 8 Pro">
+            <option value="nubia Z60 Ultra">
+
+            <!-- Motorola -->
+            <option value="Motorola Edge 50 Pro">
+            <option value="Motorola Edge 40 Pro">
+            <option value="Moto G84">
+
+            <!-- Honor -->
+            <option value="Honor Magic 6 Pro">
+            <option value="Honor X9b">
+            <option value="Honor 90">
+
+            <!-- Nothing -->
+            <option value="Nothing Phone 2">
+            <option value="Nothing Phone 2a">
+
+        </datalist>
+
+        <label for="mode">Game Mode</label>
+
+        <select id="mode">
+            <option value="mp">MULTIPLAYER (MP)</option>
+            <option value="br">BATTLE ROYALE (BR)</option>
+        </select>
+
+        <button onclick="generateSensi()">
+            GENERATE COD SENSI
+        </button>
+
+    </div>
+
+    <div class="card result" id="result">
+
+        <h2>TOP H4X SENSITIVITY</h2>
+
+        <div class="device-name" id="deviceOutput"></div>
+
+        <div class="mode-title" id="modeOutput"></div>
+
+        <div id="settings"></div>
+
+        <div class="note">
+            Sensitivity is a starting preset. Fine-tune it according to
+            your touch response, FPS and personal control.
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function getDeviceType(device) {
+
+    const name = device.toLowerCase();
+
+    if (
+        name.includes("iphone") ||
+        name.includes("ipad")
+    ) {
+        return "iphone";
+    }
+
+    if (
+        name.includes("rog") ||
+        name.includes("redmagic") ||
+        name.includes("nubia")
+    ) {
+        return "gaming";
+    }
+
+    if (
+        name.includes("s24") ||
+        name.includes("s23") ||
+        name.includes("s22") ||
+        name.includes("s21") ||
+        name.includes("s20")
+    ) {
+        return "flagship";
+    }
+
+    if (
+        name.includes("a55") ||
+        name.includes("a54") ||
+        name.includes("a35") ||
+        name.includes("a25") ||
+        name.includes("a15")
+    ) {
+        return "midrange";
+    }
+
+    if (
+        name.includes("itel") ||
+        name.includes("smart") ||
+        name.includes("a60") ||
+        name.includes("a70")
+    ) {
+        return "entry";
+    }
+
+    return "android";
+}
+
+
+/*
+    Separate MP and BR sensitivity.
+    Values are designed as legitimate in-game
+    sensitivity starting points for quick tracking.
+*/
+
+const presets = {
+
+    iphone: {
+
+        mp: {
+            "Standard": 92,
+            "ADS": 108,
+            "Tactical Scope": 112,
+            "3x Scope": 96,
+            "4x Scope": 82,
+            "Sniper Scope": 58,
+            "Firing ADS": 104
+        },
+
+        br: {
+            "Standard": 88,
+            "ADS": 102,
+            "Tactical Scope": 108,
+            "3x Scope": 91,
+            "4x Scope": 77,
+            "6x Scope": 62,
+            "Sniper Scope": 52,
+            "Firing ADS": 98
+        }
+
+    },
+
+    flagship: {
+
+        mp: {
+            "Standard": 95,
+            "ADS": 110,
+            "Tactical Scope": 115,
+            "3x Scope": 98,
+            "4x Scope": 84,
+            "Sniper Scope": 60,
+            "Firing ADS": 106
+        },
+
+        br: {
+            "Standard": 91,
+            "ADS": 104,
+            "Tactical Scope": 110,
+            "3x Scope": 93,
+            "4x Scope": 79,
+            "6x Scope": 64,
+            "Sniper Scope": 54,
+            "Firing ADS": 100
+        }
+
+    },
+
+    gaming: {
+
+        mp: {
+            "Standard": 100,
+            "ADS": 115,
+            "Tactical Scope": 120,
+            "3x Scope": 102,
+            "4x Scope": 88,
+            "Sniper Scope": 62,
+            "Firing ADS": 110
+        },
+
+        br: {
+            "Standard": 95,
+            "ADS": 108,
+            "Tactical Scope": 114,
+            "3x Scope": 96,
+            "4x Scope": 82,
+            "6x Scope": 67,
+            "Sniper Scope": 57,
+            "Firing ADS": 104
+        }
+
+    },
+
+    midrange: {
+
+        mp: {
+            "Standard": 90,
+            "ADS": 104,
+            "Tactical Scope": 110,
+            "3x Scope": 93,
+            "4x Scope": 79,
+            "Sniper Scope": 54,
+            "Firing ADS": 100
+        },
+
+        br: {
+            "Standard": 86,
+            "ADS": 98,
+            "Tactical Scope": 104,
+            "3x Scope": 88,
+            "4x Scope": 73,
+            "6x Scope": 58,
+            "Sniper Scope": 49,
+            "Firing ADS": 94
+        }
+
+    },
+
+    android: {
+
+        mp: {
+            "Standard": 88,
+            "ADS": 102,
+            "Tactical Scope": 108,
+            "3x Scope": 91,
+            "4x Scope": 77,
+            "Sniper Scope": 52,
+            "Firing ADS": 98
+        },
+
+        br: {
+            "Standard": 84,
+            "ADS": 96,
+            "Tactical Scope": 102,
+            "3x Scope": 86,
+            "4x Scope": 71,
+            "6x Scope": 56,
+            "Sniper Scope": 47,
+            "Firing ADS": 92
+        }
+
+    },
+
+    entry: {
+
+        mp: {
+            "Standard": 82,
+            "ADS": 94,
+            "Tactical Scope": 100,
+            "3x Scope": 84,
+            "4x Scope": 70,
+            "Sniper Scope": 46,
+            "Firing ADS": 90
+        },
+
+        br: {
+            "Standard": 78,
+            "ADS": 89,
+            "Tactical Scope": 95,
+            "3x Scope": 79,
+            "4x Scope": 65,
+            "6x Scope": 51,
+            "Sniper Scope": 42,
+            "Firing ADS": 86
+        }
+
+    }
+
+};
+
+
+function generateSensi() {
+
+    const device =
+        document.getElementById("device").value.trim();
+
+    const mode =
+        document.getElementById("mode").value;
+
+    if (!device) {
+
+        alert("Enter your phone model first.");
+
+        return;
+    }
+
+    const type = getDeviceType(device);
+
+    const settings =
+        presets[type][mode];
+
+    document.getElementById("result").style.display = "block";
+
+    document.getElementById("deviceOutput").innerText =
+        "DEVICE: " + device;
+
+    document.getElementById("modeOutput").innerText =
+        mode === "mp"
+        ? "⚡ MULTIPLAYER — SHARP TRACKING"
+        : "🎯 BATTLE ROYALE — PRECISION TRACKING";
+
+    let html = "";
+
+    for (const setting in settings) {
+
+        html += `
+            <div class="sensi-row">
+                <span>${setting}</span>
+                <span class="value">${settings[setting]}</span>
+            </div>
+        `;
+    }
+
+    document.getElementById("settings").innerHTML = html;
+
+    document.getElementById("result")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+}
+
+</script>
+
+</body>
+</html>
